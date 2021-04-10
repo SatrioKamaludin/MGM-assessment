@@ -1,0 +1,29 @@
+// FLEX MIXIN
+@mixin flexCenter($dir, $justify, $align) {
+    display: flex;
+    flex-direction: $dir;
+    justify-content: $justify;
+    align-items: $align;
+    flex-wrap: wrap;
+}
+
+// CLEARING OUTLINE ON FOCUS
+%clear-outline {
+    &:focus{
+        outline: none;
+    }
+}
+
+// COMMON TRANSITION FOR ALL
+%common-transition {
+    transition: 0.3s all ease-out;
+}
+
+// POSITION FIXED & WIDTH, HEIGHT : 100%
+%position-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}

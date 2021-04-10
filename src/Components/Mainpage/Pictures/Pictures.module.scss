@@ -1,0 +1,54 @@
+@import "./../../../Utils/mySCSS/utils";
+
+.wrapper {
+  padding: 10px;
+  margin-top: 10px;
+
+  .imageArray {
+    @include flexCenter(row, space-around, center);
+
+    .imageBox {
+      width: 250px;
+      height: 250px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+      margin: 10px 20px;
+
+      img{
+          display: inline-block;
+          width: 100%;
+          height: 70%;
+          object-fit: cover;
+      }
+
+      .imageTitle{
+        @include flexCenter(row, center, center);
+        padding: 5px;
+        height: 30%;
+        overflow: hidden;
+      }
+
+      .hoverSection{
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.2);
+          @include flexCenter(row, center, center);
+          transform: translateX(-100%);
+          @extend %common-transition;
+      }
+
+      &:hover {
+        .hoverSection{
+            transform: translateX(0);
+        }
+      }
+
+
+    }
+  }
+}

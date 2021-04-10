@@ -1,0 +1,19 @@
+$grid-names : (
+    1: navbar,
+    2: body,
+    3: footer
+);
+
+.gridContainer {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 8vh 1fr auto;
+    grid-template-areas:   "#{map-get($grid-names, 1 )}"
+                           "#{map-get($grid-names, 2 )}"
+                           "#{map-get($grid-names, 3)}"; 
+    @for $i from 1 through 3{
+        &>:nth-child(#{$i}){
+            grid-area: map-get($grid-names, $i);
+        }
+    }
+}
