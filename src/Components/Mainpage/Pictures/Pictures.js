@@ -4,7 +4,7 @@ import useFetch from './../../../Utils/Hooks/useFetch';
 import classes from './Pictures.module.scss';
 import { Jumbotron, Button, Modal } from 'reactstrap';
 
-function Pictures (props) {
+const Pictures = (props) => {
 
     const [photoState, photoCall] = useFetch();
 
